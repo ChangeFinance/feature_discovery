@@ -23,7 +23,7 @@ class Bloc {
   static Bloc of(BuildContext context) {
     try {
       return Provider.of<Bloc>(context, listen: false);
-    } on ProviderNotFoundException {
+    } on ProviderNotFoundError {
       throw BlocNotFoundError(
           'Could not find a FeatureDiscovery widget above this context.'
           '\nFeatureDiscovery works like an inherited widget. You must wrap your widget tree in it.');
