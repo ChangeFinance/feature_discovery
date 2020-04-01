@@ -775,7 +775,7 @@ class _TapTarget extends StatelessWidget {
       case FeatureOverlayState.closed:
         return 0;
       case FeatureOverlayState.opening:
-        return 20 + 24 * transitionProgress;
+        return 40 + 24 * transitionProgress;
       case FeatureOverlayState.opened:
         double expandedPercent;
         if (transitionProgress < 0.3) {
@@ -785,10 +785,10 @@ class _TapTarget extends StatelessWidget {
         } else {
           expandedPercent = 0;
         }
-        return 44 + (20 * expandedPercent);
+        return 64 + (20 * expandedPercent);
       case FeatureOverlayState.completing:
       case FeatureOverlayState.dismissing:
-        return 20 + 24 * (1 - transitionProgress);
+        return 40 + 24 * (1 - transitionProgress);
     }
     throw ArgumentError.value(state);
   }
@@ -800,7 +800,7 @@ class _TapTarget extends StatelessWidget {
           height: 2 * radius,
           width: 2 * radius,
           child: Opacity(
-            opacity: radius < 30 ? 0 : opacity,
+            opacity: opacity,
             child: GestureDetector(
               child: Container(
                 alignment: Alignment.center,
